@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vous, Inc. | Le PDG, c'est Vous</title>
+    <!-- Chargement de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chargement de la police Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Définition de la police par défaut */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Arrière-plan animé "élite" */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -1;
+            /* Un gradient subtil et professionnel */
+            background: conic-gradient(from 90deg at 50% 50%, #1a001a 0%, #3d1a5c 50%, #1a001a 100%);
+            animation: rotateGradient 20s linear infinite;
+            opacity: 0.3; /* Assez subtil pour ne pas gêner la lecture */
+        }
+
+        @keyframes rotateGradient {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Classes pour l'animation de défilement (Fade-in) */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Style de la barre de défilement pour le carrousel (pour navigateurs WebKit) */
+        .pillar-carousel::-webkit-scrollbar {
+            height: 8px;
+        }
+        .pillar-carousel::-webkit-scrollbar-track {
+            background: #2d3748; /* gray-800 */
+            border-radius: 10px;
+        }
+        .pillar-carousel::-webkit-scrollbar-thumb {
+            background: #a855f7; /* purple-500 */
+            border-radius: 10px;
+            border: 2px solid #2d3748;
+        }
+        .pillar-carousel::-webkit-scrollbar-thumb:hover {
+            background: #c084fc; /* purple-400 */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200 overflow-x-hidden">
+
+    <!-- Conteneur principal -->
+    <div class="max-w-6xl mx-auto p-4 md:p-8">
+
+        <!-- En-tête -->
+        <header class="text-center my-16 md:my-24 fade-in">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-orange-400 pb-2">
+                Vous, Inc.
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mt-4 max-w-3xl mx-auto">
+                Vous êtes le PDG de l'entreprise la plus importante : Votre Vie.
+            </p>
+        </header>
+
+        <!-- Section d'Introduction (Effet "Glassmorphism") -->
+        <section class="bg-gray-800/50 backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-10 my-12 fade-in">
+            <h2 class="text-3xl font-bold text-purple-300 mb-4">L'Idée Centrale</h2>
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                Considérez votre vie, votre carrière et votre développement personnel comme l'entreprise la plus importante que vous dirigerez jamais : "Vous, Inc.". Vous en êtes le Président-Directeur Général (PDG), et votre mission est d'en maximiser la valeur, non pas financièrement, mais en termes d'épanouissement, d'impact et de satisfaction.
+            </p>
+            <blockquote class="border-l-4 border-purple-400 pl-4 py-2 bg-gray-700/50 rounded-r-lg">
+                <p class="text-lg italic text-gray-200">
+                    "Le plus grand projet de votre vie, c'est vous. Gérez-le comme tel."
+                </p>
+            </blockquote>
+        </section>
+
+        <!-- Section des 6 Piliers (Carrousel interactif) -->
+        <section class="my-16 md:my-24 fade-in">
+            <h2 class="text-4xl font-bold text-center mb-10">Les 6 Piliers Fondamentaux</h2>
+
+            <!-- Conteneur du carrousel avec défilement horizontal et "snap" -->
+            <div class="flex overflow-x-auto space-x-6 md:space-x-8 py-6 snap-x snap-mandatory pillar-carousel px-4">
+                
+                <!-- Pilier 1 -->
+                <div class="flex-none w-[90%] md:w-[45%] lg:w-[30%] snap-center bg-gray-800 rounded-xl p-7 shadow-lg transform transition-all duration-300 hover:scale-[1.02] hover:shadow-purple-500/20">
+                    <span class="text-7xl font-bold text-purple-400/30">01</span>
+                    <h3 class="text-2xl font-semibold text-purple-300 mt-2">La Stratégie Personnelle</h3>
+                    <span class="inline-block bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm font-medium mt-4">Concept MBA : Planification Stratégique</span>
+                    <p class="mt-4 text-gray-300">
+                        Devenez le Stratège en Chef. Définissez votre mission personnelle, vos valeurs non négociables et fixez des "Objectifs et Résultats Clés" (OKR) pour votre vie.
+                    </p>
+                    <div class="mt-4 bg-gray-700/50 p-4 rounded-lg border-l-4 border-purple-400">
+                        <h4 class="font-semibold text-white">Action concrète :</h4>
+                        <p class="text-sm text-gray-300 mt-1">Rédigez votre "énoncé de mission personnelle" d'une ou deux phrases.</p>
+                    </div>
+                </div>
+
+                <!-- Pilier 2 -->
+                <div class="flex-none w-[90%] md:w-[45%] lg:w-[30%] snap-center bg-gray-800 rounded-xl p-7 shadow-lg transform transition-all duration-300 hover:scale-[1.02] hover:shadow-pink-500/20">
+                    <span class="text-7xl font-bold text-pink-400/30">02</span>
+                    <h3 class="text-2xl font-semibold text-pink-300 mt-2">Le Portefeuille d'Actifs (RSI du Temps)</h3>
+                    <span class="inline-block bg-pink-500/20 text-pink-300 px-3 py-1 rounded-full text-sm font-medium mt-4">Concept MBA : Gestion de Portefeuille & ROI</span>
+                    <p class="mt-4 text-gray-300">
+                        Votre capital le plus précieux est votre temps et votre énergie. Analysez votre "portefeuille de vie" (carrière, santé, relations) et pensez en termes de "Retour sur Investissement" (RSI) pour chaque activité.
+                    </p>
+                    <div class="mt-4 bg-gray-700/50 p-4 rounded-lg border-l-4 border-pink-400">
+                        <h4 class="font-semibold text-white">Action concrète :</h4>
+                        <p class="text-sm text-gray-300 mt-1">Pendant une semaine, suivez votre temps et demandez-vous : "Quel est le RSI de cette activité ?"</p>
+                    </div>
+                </div>
+
+                <!-- Pilier 3 -->
+                <div class="flex-none w-[90%] md:w-[45%] lg:w-[30%] snap-center bg-gray-800 rounded-xl p-7 shadow-lg transform transition-all duration-300 hover:scale-[1.02] hover:shadow-orange-500/20">
+                    <span class="text-7xl font-bold text-orange-400/30">03</span>
+                    <h3 class="text-2xl font-semibold text-orange-300 mt-2">L'Approche "Lean Startup"</h3>
+                    <span class="inline-block bg-orange-500/20 text-orange-300 px-3 py-1 rounded-full text-sm font-medium mt-4">Concept MBA : Lean Startup Methodology</span>
+                    <p class="mt-4 text-gray-300">
+                        Arrêtez de sur-planifier. Lancez une version minimale (MVP) de vos objectifs (ex: un café-réseau, un mini-projet). Adoptez le cycle "Construire - Mesurer - Apprendre" pour itérer rapidement.
+                    </p>
+                    <div class="mt-4 bg-gray-700/50 p-4 rounded-lg border-l-4 border-orange-400">
+                        <h4 class="font-semibold text-white">Action concrète :</h4>
+                        <p class="text-sm text-gray-300 mt-1">Quelle est la plus petite "expérience viable" que vous pourriez lancer cette semaine pour tester un objectif ?</p>
+                    </div>
+                </div>
+
+                <!-- Pilier 4 -->
+                <div class="flex-none w-[90%] md:w-[45%] lg:w-[30%] snap-center bg-gray-800 rounded-xl p-7 shadow-lg transform transition-all duration-300 hover:scale-[1.02] hover:shadow-teal-500/20">
+                    <span class="text-7xl font-bold text-teal-400/30">04</span>
+                    <h3 class="text-2xl font-semibold text-teal-300 mt-2">Le Marketing de Soi (Océan Bleu)</h3>
+                    <span class="inline-block bg-teal-500/20 text-teal-300 px-3 py-1 rounded-full text-sm font-medium mt-4">Concept MBA : Branding & Stratégie Océan Bleu</span>
+                    <p class="mt-4 text-gray-300">
+                        Gérez activement votre "marque personnelle". Ne cherchez pas à être le meilleur, cherchez à être unique. Créez votre "Océan Bleu" en combinant vos compétences de manière unique.
+                    </p>
+                    <div class="mt-4 bg-gray-700/50 p-4 rounded-lg border-l-4 border-teal-400">
+                        <h4 class="font-semibold text-white">Action concrète :</h4>
+                        <p class="text-sm text-gray-300 mt-1">Listez trois de vos compétences/passions et voyez quelle combinaison unique vous pouvez créer.</p>
+                    </div>
+                </div>
+
+                <!-- Pilier 5 -->
+                <div class="flex-none w-[90%] md:w-[45%] lg:w-[30%] snap-center bg-gray-800 rounded-xl p-7 shadow-lg transform transition-all duration-300 hover:scale-[1.02] hover:shadow-blue-500/20">
+                    <span class="text-7xl font-bold text-blue-400/30">05</span>
+                    <h3 class="text-2xl font-semibold text-blue-300 mt-2">Votre "Chaîne Logistique"</h3>
+                    <span class="inline-block bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm font-medium mt-4">Concept MBA : Gestion des Opérations</span>
+                    <p class="mt-4 text-gray-300">
+                        Votre énergie est le produit final. Optimisez vos "inputs" (sommeil, nutrition, infos) et vos "processus" (routines, organisation) pour éliminer les goulots d'étranglement (distractions, stress).
+                    </p>
+                    <div class="mt-4 bg-gray-700/50 p-4 rounded-lg border-l-4 border-blue-400">
+                        <h4 class="font-semibold text-white">Action concrète :</h4>
+                        <p class="text-sm text-gray-300 mt-1">Cartographiez votre journée et identifiez UN goulot d'étranglement à améliorer cette semaine.</p>
+                    </div>
+                </div>
+
+                <!-- Pilier 6 -->
+                <div class="flex-none w-[90%] md:w-[45%] lg:w-[30%] snap-center bg-gray-800 rounded-xl p-7 shadow-lg transform transition-all duration-300 hover:scale-[1.02] hover:shadow-indigo-500/20">
+                    <span class="text-7xl font-bold text-indigo-400/30">06</span>
+                    <h3 class="text-2xl font-semibold text-indigo-300 mt-2">La Prise de Décision (Data)</h3>
+                    <span class="inline-block bg-indigo-500/20 text-indigo-300 px-3 py-1 rounded-full text-sm font-medium mt-4">Concept MBA : Analyse Managériale</span>
+                    <p class="mt-4 text-gray-300">
+                        Prenez vos grandes décisions en collectant des "données" (recherches, avis) et non sur l'impulsion. Méfiez-vous de vos propres biais (coût irrécupérable, confirmation).
+                    </p>
+                    <div class="mt-4 bg-gray-700/50 p-4 rounded-lg border-l-4 border-indigo-400">
+                        <h4 class="font-semibold text-white">Action concrète :</h4>
+                        <p class="text-sm text-gray-300 mt-1">Face à une décision, demandez-vous : "Quelles sont les données factuelles ? Quel pourrait être mon biais ?"</p>
+                    </div>
+                </div>
+
+            </div>
+            <p class="text-center text-gray-400 mt-6 text-sm">Faites glisser pour voir tous les piliers &rarr;</p>
+        </section>
+
+        <!-- Section Résumé -->
+        <section class="bg-gray-800/50 backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-10 my-12 fade-in">
+            <h2 class="text-3xl font-bold text-purple-300 mb-6">Résumé : Votre Tableau de Bord de PDG</h2>
+            <ul class="space-y-4">
+                <li class="flex items-start">
+                    <span class="text-purple-400 text-2xl mr-3">&bull;</span>
+                    <span class="text-lg text-gray-300"><b>Stratégie :</b> Définir une mission de vie et des objectifs clairs.</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-pink-400 text-2xl mr-3">&bull;</span>
+                    <span class="text-lg text-gray-300"><b>Investissement :</b> Gérer son temps et son énergie pour le meilleur "RSI".</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-orange-400 text-2xl mr-3">&bull;</span>
+                    <span class="text-lg text-gray-300"><b>Innovation :</b> Tester rapidement de nouvelles idées (MVP) au lieu de sur-planifier.</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-teal-400 text-2xl mr-3">&bull;</span>
+                    <span class="text-lg text-gray-300"><b>Marketing :</b> Gérer sa "marque personnelle" et créer sa niche unique.</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-400 text-2xl mr-3">&bull;</span>
+                    <span class="text-lg text-gray-300"><b>Opérations :</b> Optimiser ses routines (sommeil, nutrition) pour maximiser son énergie.</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-indigo-400 text-2xl mr-3">&bull;</span>
+                    <span class="text-lg text-gray-300"><b>Décision :</b> Utiliser des données et des faits, pas seulement l'émotion ou les biais.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Footer / Mantra final -->
+        <footer class="text-center my-16 md:my-24 fade-in">
+            <p class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
+                Ne subissez pas votre vie, pilotez-la.
+            </p>
+            <p class="text-xl text-gray-300 mt-3">Soyez intentionnel.</p>
+            
+            <p class="text-sm text-gray-500 mt-12">
+                Concept "Vous, Inc." - Un site statique moderne.
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- Script pour les animations au défilement -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const targets = document.querySelectorAll('.fade-in');
+
+            // Vérifie si l'API est supportée
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        // Quand l'élément entre dans le viewport
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            // On arrête de l'observer après l'animation
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 }); // Se déclenche quand 10% de l'élément est visible
+
+                // Observe chaque cible
+                targets.forEach(target => {
+                    observer.observe(target);
+                });
+            } else {
+                // Fallback pour les vieux navigateurs : tout afficher
+                targets.forEach(target => {
+                    target.classList.add('visible');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
